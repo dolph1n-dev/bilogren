@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BilÖğren ile bilgisayarın temellerini öğrenin. Açıklamalı sınavlar, güvenli dosya gezgini ve klavye egzersizleriyle ücretsiz pratik yapın.">
+  <meta name="theme-color" content="#2563b0">
+  <title>BilÖğren — Bilgisayarı birlikte öğrenelim</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/core.js"></script>
+  <script defer src="./assets/js/data.js"></script>
+  <script defer src="./assets/js/lessons.js"></script>
+  <script defer src="./assets/js/exams.js"></script>
+  <script defer src="./assets/js/vfs.js"></script>
+  <script defer src="./assets/js/scenarios.js"></script>
+  <script defer src="./assets/js/explorer.js"></script>
+  <script defer src="./assets/js/typing.js"></script>
+  <script defer src="./assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#konular" aria-label="BilÖğren ana sayfa"><span class="brand-icon" aria-hidden="true">b.</span><span>Bil<span class="brand-blue">Öğren</span></span></a>
+      <span class="header-note">Küçük adımlar, yeni beceriler.</span>
+      <button id="font-size" class="quiet" aria-pressed="false" title="Yazıları büyüt">A+ <span>Yazıyı büyüt</span></button>
+    </div>
+    <nav class="tabs-wrap" aria-label="Eğitim modülleri">
+      <div class="tabs" role="tablist" aria-label="Eğitim modülleri">
+        <button id="tab-konular" role="tab" aria-controls="konular" aria-selected="true" data-tab="konular"><span aria-hidden="true">01</span> Konu Anlatımı</button>
+        <button id="tab-sinavlar" role="tab" aria-controls="sinavlar" aria-selected="false" tabindex="-1" data-tab="sinavlar"><span aria-hidden="true">02</span> Sınavlar</button>
+        <button id="tab-pratik" role="tab" aria-controls="pratik" aria-selected="false" tabindex="-1" data-tab="pratik"><span aria-hidden="true">03</span> Masaüstü Pratik</button>
+        <button id="tab-klavye" role="tab" aria-controls="klavye" aria-selected="false" tabindex="-1" data-tab="klavye"><span aria-hidden="true">04</span> Klavye Egzersizi</button>
+      </div>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="konular" role="tabpanel" aria-labelledby="tab-konular"></section>
+    <section id="sinavlar" role="tabpanel" aria-labelledby="tab-sinavlar" hidden></section>
+    <section id="pratik" role="tabpanel" aria-labelledby="tab-pratik" hidden></section>
+    <section id="klavye" role="tabpanel" aria-labelledby="tab-klavye" hidden></section>
+    <noscript><p class="notice">Bu eğitimdeki etkileşimler için tarayıcınızın JavaScript özelliğini açmalısınız.</p></noscript>
+  </main>
+  <footer class="site-footer"><strong>BilÖğren</strong><span>Hata yapmak öğrenmenin bir parçası. Burada güvenle deneyebilirsiniz.</span><span>Ücretsiz • Kayıt gerektirmez</span></footer>
+  <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+  <dialog id="app-dialog" aria-labelledby="dialog-title"><form id="dialog-form" method="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button type="button" id="dialog-x" class="quiet" aria-label="Pencereyi kapat">Kapat</button></div><div id="dialog-body"></div><div id="dialog-actions" class="dialog-actions"></div></form></dialog>
+</body>
+</html>

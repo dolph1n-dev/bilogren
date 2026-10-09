@@ -1,0 +1,39 @@
+name: GitHub Pages yayınla
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+      - name: GitHub Pages'i yapılandır
+        uses: actions/configure-pages@v5
+      - name: Yalnızca statik site dosyalarını hazırla
+        run: |
+          mkdir -p _site
+          cp index.html .nojekyll _site/
+          cp -R assets _site/
+      - name: Siteyi yükle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Yayına al
+        id: deployment
+        uses: actions/deploy-pages@v4
