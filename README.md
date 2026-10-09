@@ -42,6 +42,8 @@ assets/js/app.js        # Sekmeler ve erişilebilirlik tercihleri
 
 ## GitHub Pages
 
+Bu repoda Pages yayın kaynağı **GitHub Actions** olarak etkinleştirilmiştir; HTTPS zorunludur. Ek sunucu kurulumu veya kişisel token gerekmiyor.
+
 `main` dalına her push ve elle `workflow_dispatch`, statik siteyi derleme olmadan `github-pages` ortamına yayınlar. Sadece `index.html`, `.nojekyll` ve `assets/` siteye alınır; test ve belge dosyaları yayınlanmaz. Workflow standart GitHub Pages actions kullanır, proje paket veya Node.js bağımlılığı taşımaz. Actions'ın kendi yürütücüsü bir uygulama bağımlılığı değildir.
 
 İlk kurulumda **Settings → Pages → Build and deployment → Source: GitHub Actions** seçili olmalıdır. Varsayılan workflow token'ı ilk kez Pages etkinleştirmek için yönetim yetkisi taşımaz; bu nedenle workflow'a kişisel token veya gizli anahtar eklenmemiştir. Ardından **Actions → GitHub Pages yayınla → Run workflow** ile tekrar çalıştırın. Public repo için GitHub Pages ücretsizdir.
